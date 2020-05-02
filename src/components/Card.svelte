@@ -42,6 +42,7 @@
     max-width: 600px;
     border-radius: 15px;
     background-color: var(--background-color__card);
+    margin-bottom: 15px;
   }
 
   .card--header {
