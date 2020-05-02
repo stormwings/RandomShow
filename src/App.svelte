@@ -1,7 +1,18 @@
 <script>
+	import { onMount } from 'svelte'
+	import { photos } from './store/store'
 	import Card from './components/Card.svelte'
+	import Input from './components/Input.svelte'
 
 	let styles = { darkMode: false }
+
+	onMount(async () => {
+		console.log($photos)
+		const response = await fetch('https://jsonplaceholder.typicode.com/photos?_limit=20');
+		const values = await response.json()
+		await photos.update(value => values)
+		console.log($photos)
+	})
 	
 	let games = [
 		{
@@ -41,6 +52,8 @@
 	<p>
 		Powered by <a href="https://crackwatch.com/">CrackWatch</a>
 	</p>
+
+	<Input />
 
 	<div class="games">
 		{#each games as game, i}
