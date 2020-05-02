@@ -1,23 +1,28 @@
 <script>
-  const goToBuy = () => console.log('Go buy!')
-  const goToDownload = () => console.log('Go pirate!')
-  const imageProfile = 'https://i1.wp.com/culturageek.com.ar/wp-content/uploads/2020/03/Culturageek.com_.ar-Resident-Evil-3-Review-1.jpg'
+  // props
+  export let name;
+  export let description;
+  export let image;
+  export let urlBuy;
+  export let urlDownload;
 
+  export const goToBuy = () => window.open(urlBuy, '__blank')
+  export const goToDownload = () => urlDownload ? window.open(urlDownload, '__blank') : null
 </script>
 
 <main>
   <div class="card">
     <div class="card--header">
       <div class="card--header__title">
-        Resident Evil 3 Remake
+        {name}
       </div>
     </div>
     <div class="card--body">
       <div class="card--body__image">
-        <img src={imageProfile} alt="Resident evil 3 banner">
+        <img src={image} alt="Resident evil 3 banner">
       </div>
       <div class="card--body__description">
-        El Juego aún no ha sido crackeado 💔
+        {description}
       </div>
     </div>
     <div class="card--footer">

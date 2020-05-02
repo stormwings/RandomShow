@@ -1,18 +1,21 @@
 <script>
 	import Card from './components/Card.svelte'
-	export let name;
-	export let lastName;
-	
-	setTimeout(() => lastName = 'holus', 3000)
 </script>
 
 <main>
-	<!-- <h1>Hello {name} {lastName}!</h1> -->
 	<h1>RandomShow!</h1>
 	<p>Estos son los últimos juegos que puedes descargar</p>
-	<p>Powered by <a href="https://svelte.dev/tutorial">CrackWatch</a>.</p>
+	<p>
+		Powered by <a href="https://crackwatch.com/">CrackWatch</a>
+	</p>
 
-	<Card />
+	<Card
+		name="Resident Evil 3 Remake"
+		description="El Juego aún no ha sido crackeado 💔"
+		image="https://i1.wp.com/culturageek.com.ar/wp-content/uploads/2020/03/Culturageek.com_.ar-Resident-Evil-3-Review-1.jpg"
+		urlBuy="https://store.steampowered.com/app/952060/RESIDENT_EVIL_3/?l=latam&curator_clanid=28542422"
+		urlDownload=""
+	/>
 </main>
 
 <style>
